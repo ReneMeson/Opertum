@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Opertum", "Opertum\Opertum\Opertum.csproj", "{3B5DF160-327D-4F0D-8A90-1E742230CB67}"
 EndProject
-Project("{96E2B04D-8817-42C6-938A-82C39BA4D311}") = "OpertumContent", "Opertum\OpertumContent\OpertumContent.contentproj", "{0DAAC3C5-4A9B-4AEE-8096-094CB6309FD7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OpertumContent", "Opertum\OpertumContent\OpertumContent.contentproj", "{0DAAC3C5-4A9B-4AEE-8096-094CB6309FD7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

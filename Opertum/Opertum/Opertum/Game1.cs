@@ -18,11 +18,14 @@ namespace Opertum
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        clsPlayer player;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+            graphics.PreferredBackBufferHeight = 800;
+            graphics.PreferredBackBufferWidth = 600;
         }
 
         /// <summary>
@@ -46,6 +49,8 @@ namespace Opertum
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+            player = new clsPlayer(Content);
+            player.position = new Rectangle(275, 750, 50, 50);
 
             // TODO: use this.Content to load your game content here
         }
@@ -81,10 +86,13 @@ namespace Opertum
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Black);
+            spriteBatch.Begin();
 
-            // TODO: Add your drawing code here
+            player.Dibujar(spriteBatch);
 
+
+            spriteBatch.End();
             base.Draw(gameTime);
         }
     }

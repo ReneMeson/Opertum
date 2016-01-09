@@ -19,13 +19,14 @@ namespace Opertum
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         clsPlayer player;
+        KeyboardState keyboardStat;
 
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            graphics.PreferredBackBufferHeight = 800;
-            graphics.PreferredBackBufferWidth = 600;
+            graphics.PreferredBackBufferHeight = 600;
+            graphics.PreferredBackBufferWidth = 800;
         }
 
         /// <summary>
@@ -50,7 +51,7 @@ namespace Opertum
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             player = new clsPlayer(Content);
-            player.position = new Rectangle(275, 750, 50, 50);
+            player.position = new Rectangle(10, 500, 50, 50);
 
             // TODO: use this.Content to load your game content here
         }
@@ -75,7 +76,38 @@ namespace Opertum
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed)
                 this.Exit();
 
-            // TODO: Add your update logic here
+            //Move sprite player left and rigt
+            keyboardStat = Keyboard.GetState();
+            Keys[] teclas = keyboardStat.GetPressedKeys();
+
+            for ( int i = 0;i< teclas.Length; i++)
+            {
+
+                switch (teclas[i])
+                {
+
+                    case Keys.Left:
+                        {
+                            player.moveLeft();
+                            break;
+                        }
+                    case Keys.Right:
+                        {
+                            player.moveRight();
+                            break;
+                        }
+                    case Keys.Up:
+                        {
+                            player.moveUp();
+                            break;
+                        }
+                    case Keys.Down:
+                        {
+                            player.moveDown();
+                            break;
+                        }
+                }
+            }
 
             base.Update(gameTime);
         }

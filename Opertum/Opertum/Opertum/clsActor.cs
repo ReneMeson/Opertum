@@ -13,25 +13,25 @@ namespace Opertum
 {
    abstract class clsActor
     {
-        protected Rectangle Position;
+        protected Rectangle _position;
 
         public Rectangle position
         {
-            get { return position; }
-            set { position = value; }
+            get { return _position; }
+            set { _position = value; }
         }
 
-        protected Texture2D Texture;
+        protected Texture2D _texture;
 
         public Texture2D texture
         {
-            get { return texture; }
-            set { texture = value; }
+            get { return _texture; }
+            set { _texture = value; }
         }
 
         public void Dibujar(SpriteBatch sb)
         {
-            sb.Draw(texture, position, Color.White);
+            sb.Draw(_texture, _position, Color.White);
         }
 
     }
